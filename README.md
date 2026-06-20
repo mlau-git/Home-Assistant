@@ -17,7 +17,11 @@ Running both Proxmox (PVE) and TrueNAS was clearly a far better approach, since 
 Home Assistant OS needs far more memory than a docker container, but that's worth it (and not a problem on my 32GB mini-PC)
 
 ## Customizations & Integrations
-I've successfully tweaked many integrations.
+I've successfully added various IoT devices, improved dashboards, and configured automations
+
+### Mobile app 
+
+### Remote Access
 
 ### HACS
 
