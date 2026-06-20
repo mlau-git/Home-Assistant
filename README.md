@@ -26,4 +26,24 @@ I've successfully added various IoT devices, improved dashboards, and configured
 ### HACS
 
 ### MQTT
+I've shied away a long time before diving in MQTT.
+The purpose was to get sytem info from a Linux laptop (to be displayed near all useful info I have on phones and tablets, thanks to companion app).
+There are 3 steps to mkae this happe:
+1. Installing and MQTT broker
+2. Configuring Home Assitant to use this broker
+3. Installing automations on my linux laptop to use MQTT to share datapoints
+
+   
+#### Installing an MQTT brober
+
+#### Telling Home Assistant to point to MQTT brober
+
+#### Installing 
+```bash
+sudo apt install python3-venv
+python3 -m venv ~/linux2mqtt
+
+~/linux2mqtt/bin/linux2mqtt   --name $HOSTNAME   --cpu=15   --vm   --temp   --du='/'   --du='/home'   --net=wlp170s0,15   --host=192.168.1.20   --username=mqtt_svc   --password=ComplexPwd   -vvvvv
+
+```
 (to be continued)
