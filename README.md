@@ -12,6 +12,7 @@ When I decided I needed a real playground for my homelab, I searched for the bes
 Running both Proxmox (PVE) and TrueNAS was clearly a far better approach, since I could:
 - run Home Assistant OS as a VM (benefiting from all the in-app upgrades)
 - have secured snapshots/backups (it did save me several times, with a quick restore -- after my latest improvements... broke the env 😉)
+- enjoy flexibility of LVM to be able to resize disks as needed (see resize-disk.sh file)
 - run several other Containers and VMs (Pihole, NGNIX, beszel, etc.) in parallel, an a single mini-PC
 
 Home Assistant OS needs far more memory than a docker container, but that's worth it (and not a problem on my 32GB mini-PC)
@@ -20,20 +21,23 @@ Home Assistant OS needs far more memory than a docker container, but that's wort
 I've successfully added various IoT devices, improved dashboards, and configured automations
 
 ### Hardware passthrough 
-HA needed Bluetooth (for some temperature and humidity sensors), so I've leveraged on the HA VM the hardware form the host 
+My HA instance needed Bluetooth for some temperature and humidity sensors. I've set up the HA VM to leverage the hardware from the host 
 < insert steps here>
 
 ### Mobile app 
+The Companion app on Android works terrific (almost as efficient as browser on laptop)  
 
 ### Remote Access
+When not at home, I missed all these IoT devices and automations. I've never needed Home Assistant Cloud, but successfully tried various VPN-minded tactics: WireGuard & Tailscale.
 
 ### HACS
 
 ### MQTT
 I've shied away a long time before diving in MQTT.
-The purpose was to get sytem info from a Linux laptop (to be displayed near all useful info I have on phones and tablets, thanks to companion app).
-There are 3 steps to mkae this happe:
-1. Installing and MQTT broker
+The purpose was to get sytem info from a Linux laptop (to be displayed near all useful info I have for phones and tablets, thanks to companion app). MQTT act as bus bus where HA and the linux endpoint are connected to and communicate thru.
+
+There are 3 steps to make this happe:
+1. Installing an MQTT broker
 2. Configuring Home Assitant to use this broker
 3. Installing automations on my linux laptop to use MQTT to share datapoints
 
